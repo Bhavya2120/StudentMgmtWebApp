@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <style>
+        footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: grey;
+        }
+        
+        table {
+            border: 5px solid black;
+        }
+        
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Students List</h1>
+    <table id="all-students">
+        <tr>
+            <th>SNo</th>
+            <th>Roll Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Actions</th>
+        </tr>
+
+        {% set count=namespace(value=1) %} {% for row in all %}
+        <tr>
+            <td>{{count.value}}</td>
+            <td><a href="/student/{{row['student_id']}}">{{row['roll_number']}}</a></td>
+            <td>{{row['first_name']}}</td>
+            <td>{{row['last_name']}}</td>
+            <td>
+                <a href="/student/{{row['student_id']}}/update" type="button">Update</a>
+                <a href="/student/{{row['student_id']}}/delete" type="button">Delete</a>
+            </td>
+        </tr>
+        {% set count.value=count.value+1 %} {% endfor %}
+
+    </table>
+    <a href="/student/create">+Add student</a>
+    <footer align="center">Bhavya Dua, Feb 2022</footer>
+</body>
+
+</html>

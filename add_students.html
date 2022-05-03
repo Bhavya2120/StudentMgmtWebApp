@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Add Student</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        
+        footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add a student</h1>
+    <form action="/student/create" method="POST" id="create-form">
+        <div>
+            <label>Roll Number:</label>
+            <input type="text" name="roll" value="" required>
+        </div>
+        <div>
+            <label>First Name:</label>
+            <input type="text" name="f_name" value="" required>
+        </div>
+        <div>
+            <label>Last Name:</label>
+            <input type="text" name="l_name" value="">
+        </div>
+
+        <div>
+            <label>Select Course: </label>
+            <div class="tooltip">
+                <input type="checkbox" name="courses" value="course_1">
+                <label>MAD 1</label>
+                <span class="tooltiptext">Modern Application Development-1</span>
+            </div>
+            <div class="tooltip">
+                <input type="checkbox" name="courses" value="course_2">
+                <label>DBMS</label>
+                <span class="tooltiptext">Database Management Systems</span>
+            </div>
+            <div class="tooltip">
+                <input type="checkbox" name="courses" value="course_3">
+                <label>PDSA</label>
+                <span class="tooltiptext">Programming, Data Structures, and Algorithms in Python</span>
+            </div>
+            <div class="tooltip">
+                <input type="checkbox" name="courses" value="course_4">
+                <label>BDM</label>
+                <span class="tooltiptext">Business Data Management</span>
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <footer align="center">Bhavya Dua, Feb 2022</footer>
+</body>
+
+</html>
