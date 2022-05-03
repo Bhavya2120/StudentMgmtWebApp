@@ -1,0 +1,6 @@
+Flask 2.0.2
+jinja2 3.0.3
+Python 3
+MarkUpSafe 2.0.1
+SQLite
+SQLAlchemy
